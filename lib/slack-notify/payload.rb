@@ -17,12 +17,12 @@ module SlackNotify
 
     def to_hash
      hash = {
-        text:       text,
-        username:   username,
-        channel:    channel,
-        icon_url:   icon_url,
-        icon_emoji: icon_emoji,
-        link_names: link_names
+        :text => text,
+        :username =>  username,
+        :channel =>   channel,
+        :icon_url =>  icon_url,
+        :icon_emoji => icon_emoji,
+        :link_names => link_names
       }
 
       hash.delete_if { |_,v| v.nil? }
