@@ -24,12 +24,12 @@ module SlackNotify
     def notify(text, channel = nil)
       delivery_channels(channel).each do |chan|
         payload = SlackNotify::Payload.new(
-          text:       text,
-          channel:    chan,
-          username:   @username,
-          icon_url:   @icon_url,
-          icon_emoji: @icon_emoji,
-          link_names: @link_names
+          :text  =>    text,
+          :channel =>    chan,
+          :username =>  @username,
+          :icon_url =>   @icon_url,
+          :icon_emoji => @icon_emoji,
+          :link_names => @link_names
         )
 
         send_payload(payload)
