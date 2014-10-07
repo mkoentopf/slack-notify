@@ -10,7 +10,7 @@ module SlackNotify
       @icon_emoji = options[:icon_emoji]
       @link_names = options[:link_names]
 
-      unless channel[0] =~ /^(#|@)/
+      unless channel.match(/^(#|@)/o)
         @channel = "##{@channel}"
       end
     end
